@@ -31,17 +31,14 @@ public class InputsTest {
         String resultArrowDown = driver.findElement(By.tagName("input")).getAttribute("value");
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(resultArrowDown, "97", "The result is incorrect, please recheck");
-
         //check ARROW_UP
         driver.findElement(By.tagName("input")).sendKeys(Keys.ARROW_UP, Keys.ARROW_UP);
         String resultArrowUp = driver.findElement(By.tagName("input")).getAttribute("value");
         softAssert.assertEquals(resultArrowUp, "99", "The result is incorrect, please recheck");
-
         //check not digits
         driver.findElement(By.tagName("input")).sendKeys("ABC");
         String resultLetters = driver.findElement(By.tagName("input")).getAttribute("value");
         softAssert.assertEquals(resultLetters, "99", "Letters were entered into the input field");
-
         //check special symbols
         driver.findElement(By.tagName("input")).sendKeys("***___");
         String resultSpecialSymbols = driver.findElement(By.tagName("input")).getAttribute("value");

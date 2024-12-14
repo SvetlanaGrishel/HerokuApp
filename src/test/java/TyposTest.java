@@ -29,7 +29,6 @@ public class TyposTest {
         SoftAssert softAssert = new SoftAssert();
         String referenceString = "Sometimes you'll see a typo, other times you won't.";
         int quantityOfRefresh = 5;
-
         for (int i = 0; i < quantityOfRefresh; i++) {
             driver.navigate().refresh();
             List<WebElement> textFromPage = driver.findElements(By.tagName("p")); //тут у нас 2 элемента: 1 и 2
